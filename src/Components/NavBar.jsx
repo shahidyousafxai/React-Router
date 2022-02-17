@@ -14,6 +14,9 @@ const NavBar = () => {
         <NavLink to='/about' className='ml-5 hover:text-rose-800'>
           About
         </NavLink>
+        <NavLink to='/users/admin' className='ml-5 hover:text-rose-800'>
+          Users
+        </NavLink>
       </nav>
     </div>
   )
