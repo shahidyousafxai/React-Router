@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
 import { useAuth } from './Auth'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 const Login = () => {
   const [user, setUser] = useState('')
   const auth = useAuth()
   const navigate = useNavigate()
+  const location = useLocation()
+
+  const redirectPath = location.state?.path || ''
 
   const handleLogin = () => {
     if (user !== '') {
       auth.login(user)
-      navigate('/')
+      navigate(redirectPath)
     } else {
       alert('Please Enter Your Name...!')
     }
