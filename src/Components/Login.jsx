@@ -8,7 +8,8 @@ const Login = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
-  const redirectPath = location.state?.path || ''
+  const redirectPath = location.state?.path || '/profile'
+  //   console.log(redirectPath)
 
   const handleLogin = () => {
     if (user !== '') {
